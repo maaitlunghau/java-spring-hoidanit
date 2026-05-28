@@ -1,9 +1,19 @@
+----------------------------------------------
+            JAVA SPRING - TƯ HỌC 
+----------------------------------------------
+
+I. LÝ THUYẾT (note lại)
 - Java Spring (Spring) là một Framework mạnh mẽ của Java, dùng để xây dựng ứng dụng Web, API, Microservices hoặc hệ thống doanh nghiệp lớn
-
 - Spring giúp viết code Java ít hơn, dễ bảo trì hơn, an toàn và mở rộng hơn
+- Sử dụng Spring Boot: có thể hiểu là việc cấu hình dự án cho nó chạy nhanh hơn, nó là thành phần bên trong hệ sinh thái Java (Java Ecosystem)
+- nhiều công ty và doanh nghiệp đang sử dụng công nghệ Java Spring (Spring Boot)
 
-- Nguồn tài liệu: https://spring.io hoặc https://spring.io/why-spring (làm được gì với spring)
-+ Generative AI (bề nổi thôi, không chuyên sâu bằng Python - top 1 server về AI)
+
+
+II. NGUỒN TÀI LIỆU HỌC
+- Nguồn tài liệu chính thức và uy tín: https://spring.io 
+hoặc https://spring.io/why-spring (làm được gì với spring)
++ Generative AI (chỉ bề nổi, không chuyên sâu bằng Python - top 1 server về AI)
 + Microservices (*): hỗ trợ tốt
 + Reactive: hỗ trợ nhiều luồng
 + Cloud (*)
@@ -12,4 +22,42 @@
 + Serverless: không cần quản lý server
 + Batch: xử lý dữ liệu lớn
 
-- nhiều công ty và doanh nghiệp đang sử dụng công nghệ Java Spring (Spring Boot)
+- Ngoài ra, nguồn https://baeldung.com (blog kĩ thuật chuyên sâu) cũng là một nguồn rất uy tín, được viết bởi các chuyên gia và lập trình viên thực tế. 
+Nó tập trung vào việc giải quyết các bài toán cụ thể, các tình huống thực tế, và giải thích sâu hơn về Java Core lẫn Spring Framework. Nó giống như một cuốn sách giải bài tập nâng cao và sổ tay kinh nghiệm thực chiến.
+
+
+
+
+III. CÁC MODULE THƯỜNG GẶP:
+- Spring Boot: Giúp khởi động ứng dụng nhanh, tự cấu hình
+- Spring Core: Nền tảng gốc, dependency injection, quản lý đối tượng
+- Spring Data: Làm việc với database (MySQL, SQL Server, PostgreSQL, ...) dễ dàng
+- Spring Security: Bảo mật, đăng nhập, phân quyền, xác thực token (JWT, OAuth2)
+- Spring Web / REST: Xây dựng website và API
+- Spring Cloud: Dành cho hệ thống lớn, microservices
+
+
+
+IV. LỘ TRÌNH HỌC:
+BƯỚC 1: Học Spring Web (MVC)
+- Mô hình truyền thống SSR, giúp thấy được thành quả ngay mà không cần cấu hình phức tạp
+- Sử dụng mô hình MVC (template engine)
+- Giúp hiểu cơ chế Dependency Injection (DI)
+
+BƯỚC 2: Học Spring Core
+- Những tính năng mà Spring đã làm sẵn cho mình
+
+BƯỚC 3: Học Spring Boot
+- Học cách cấu hình Spring
+
+BƯỚC 4: Học Spring Data (JPA)
+- Chạy ứng dụng Spring kết hợp với Database
+
+BƯỚC 5: Học Spring Security
+- Cơ chế Authentication/Authorization
+
+BƯỚC 6: Sử dụng Spring như là RESTful APIs Server
+- Sử dụng cơ chế JWT (Json Web Token)
+
+BƯỚC 7: Thực hành project
+- Giúp nắm vững từ bước 1 đến bước 6
