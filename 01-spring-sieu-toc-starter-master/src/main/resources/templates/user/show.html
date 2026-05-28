@@ -34,13 +34,15 @@
                     <td th:text="${user.name}" />
                     <td th:text="${user.email}" />
                     <td th:text="${user.address}" />
-                    <td>
+                    <td style="display: flex; gap: 15px;">
                         <a th:href="@{/user/{id}(id=${user.id})}" class="btn btn-warning">
                             Update
                         </a>
-                        <a href="" class="btn btn-danger">
-                            Delete
-                        </a>
+                        <form method="post" th:action="@{/user/delete/{id}(id=${user.id})}">
+                            <button class="btn btn-danger" type="submit">
+                                Delete
+                            </button>
+                        </form>
                     </td>
                 </tr>
 

@@ -13,6 +13,7 @@ package vn.hoidanit.springsieutoc.controller;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -110,5 +111,15 @@ public class HelloController {
 		model.addAttribute("users", userList);
 
 		return "/user/show";
+	}
+
+	@PostMapping("/user/delete/{id}")
+	public String postDeleteUser(Model model, @PathVariable int id) {
+		List<User> userList = this._userService.fetchUsers();
+		List<User> newUserList = userList.stream().filter(user -> user.getId() != id)
+				.collect(Collectors.toList());
+		model.addAttribute("users", newUserList);
+
+		return "/user/show"; // hoặc redirect:/user
 	}
 }
