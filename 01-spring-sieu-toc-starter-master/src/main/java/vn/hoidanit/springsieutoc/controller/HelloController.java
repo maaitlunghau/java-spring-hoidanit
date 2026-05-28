@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import vn.hoidanit.springsieutoc.model.User;
 import vn.hoidanit.springsieutoc.service.UserServiceWrong1;
+import vn.hoidanit.springsieutoc.service.UserServiceWrong2;
 
 @Controller // MVC
 public class HelloController {
@@ -42,13 +43,16 @@ public class HelloController {
 		// new User("Nguyễn Văn A", "a.nguyen@example.com", "Hà Nội"),
 		// new User("Trần Thị B", "b.tran@example.com", "TP.HCM"),
 		// new User("Lê Văn C", "c.le@example.com", "Đà Nẵng"));
-
 		// model.addAttribute("users", userList);
 
-		UserServiceWrong1 usw1 = new UserServiceWrong1();
-		List<User> userServiceWrong1 = usw1.fetchUsers();
+		// cách làm sai 1
+		// UserServiceWrong1 usw1 = new UserServiceWrong1();
+		// List<User> userServiceWrong1 = usw1.fetchUsers();
+		// model.addAttribute("users", userServiceWrong1);
 
-		model.addAttribute("users", userServiceWrong1);
+		// cách làm sai 2 (static)
+		List<User> userServiceWrong2 = UserServiceWrong2.fetchUsers();
+		model.addAttribute("users", userServiceWrong2);
 
 		return "/user/showUser";
 	}

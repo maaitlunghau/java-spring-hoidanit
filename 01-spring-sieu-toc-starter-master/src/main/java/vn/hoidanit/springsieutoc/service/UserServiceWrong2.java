@@ -21,6 +21,7 @@ public class UserServiceWrong2 {
 		// Logic fetch user/kết nối DB thực tế sẽ ở đây
 		List<User> userList = Arrays.asList(new User("Nguyễn Văn A", "a.nguyen@example.com", "Hà Nội"),
 				new User("Trần Thị B", "b.tran@example.com", "TP.HCM"),
+				new User("Mai Trung Hậu", "chunhau.py@gmail.com", "TP.HCM"),
 				new User("Lê Văn C", "c.le@example.com", "Đà Nẵng"));
 
 		return userList;
