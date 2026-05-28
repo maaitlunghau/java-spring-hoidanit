@@ -9,7 +9,7 @@
  * Copyright (c) 2025 Hỏi Dân IT. All Rights Reserved.
  */
 
-package vn.hoidanit.springsieutoc;
+package vn.hoidanit.springsieutoc.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
