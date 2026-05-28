@@ -13,21 +13,11 @@ package vn.hoidanit.springsieutoc;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@Controller // MVC
 public class HelloController {
-	@GetMapping("/hoidanit")
-	public String index() { // RestController
-		return "Hello World from Spring Boot - @hoidanit devtools";
-	}
 
-	@GetMapping("/dev") // RestController
-	public String maaitlunghau() {
-		return "Hello maaitlunghau";
-	}
-
-	@GetMapping("/template-engine") // Controller (MVC)
+	@GetMapping("/template-engine")
 	public String testTemplateEngine() {
 		return "hello.html";
 	}
