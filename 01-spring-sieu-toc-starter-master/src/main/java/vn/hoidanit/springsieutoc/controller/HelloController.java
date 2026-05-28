@@ -65,6 +65,11 @@ public class HelloController {
 		List<User> userList = this._userService.fetchUsers();
 		model.addAttribute("users", userList);
 
-		return "/user/showUser";
+		return "/user/show";
+	}
+
+	@GetMapping("/user/create")
+	public String getCreatePage() {
+		return "/user/create";
 	}
 }
