@@ -1,14 +1,24 @@
 package vn.hoidanit.springsieutoc.model;
 
 public class User {
+    private int id;
     private String name;
     private String email;
     private String address;
 
-    public User(String name, String email, String address) {
+    public User(int id, String name, String email, String address) {
+        this.id = id;
         this.name = name;
         this.email = email;
         this.address = address;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -37,6 +47,6 @@ public class User {
 
     @Override
     public String toString() {
-        return "User [name=" + name + ", email=" + email + ", address=" + address + "]";
+        return "User [id=" + id + ", name=" + name + ", email=" + email + ", address=" + address + "]";
     }
 }
