@@ -61,3 +61,16 @@ BƯỚC 6: Sử dụng Spring như là RESTful APIs Server
 
 BƯỚC 7: Thực hành project
 - Giúp nắm vững từ bước 1 đến bước 6
+
+
+V. KIẾN THỨC 
+1. Build Tools (Maven và Gradle)
+- Gradle - Groovy: sử dụng Gradle làm công cụ xây dựng, với các file cấu hình được viết bằng ngôn ngữ Groovy
+- Gradle - Kotlin: sử dụng Gradle làm công cụ xây dựng, với các file cấu hình được viết bằng ngôn ngữ Kotlin
+- Maven: sử dụng Maven làm công cụ xây dựng, với các file cấu hình được viết bằng ngôn ngữ xml
+
+NÓ CHỊU TRÁCH NHIỆM CHO CÁC TÁC VỤ:
++ Quản lý thư viện (Dependencies)
++ Biên dịch (Compilation): dịch mã nguồn (Java, Kotlin) thành mã bytecode (mã máy tính hiểu)
++ Đóng gói ứng dụng (Packaging)
++ Chạy kiểm thử (Testing): unit tests
