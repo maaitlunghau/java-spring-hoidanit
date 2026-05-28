@@ -19,6 +19,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import vn.hoidanit.springsieutoc.model.User;
+import vn.hoidanit.springsieutoc.service.UserServiceWrong1;
 
 @Controller // MVC
 public class HelloController {
@@ -37,12 +38,17 @@ public class HelloController {
 	@GetMapping("/user")
 	public String showUser(Model model) {
 		// 1. HARDCODE danh sách User (thay thế cho việc gọi Service/Database)
-		List<User> userList = Arrays.asList(
-				new User("Nguyễn Văn A", "a.nguyen@example.com", "Hà Nội"),
-				new User("Trần Thị B", "b.tran@example.com", "TP.HCM"),
-				new User("Lê Văn C", "c.le@example.com", "Đà Nẵng"));
+		// List<User> userList = Arrays.asList(
+		// new User("Nguyễn Văn A", "a.nguyen@example.com", "Hà Nội"),
+		// new User("Trần Thị B", "b.tran@example.com", "TP.HCM"),
+		// new User("Lê Văn C", "c.le@example.com", "Đà Nẵng"));
 
-		model.addAttribute("users", userList);
+		// model.addAttribute("users", userList);
+
+		UserServiceWrong1 usw1 = new UserServiceWrong1();
+		List<User> userServiceWrong1 = usw1.fetchUsers();
+
+		model.addAttribute("users", userServiceWrong1);
 
 		return "/user/showUser";
 	}
