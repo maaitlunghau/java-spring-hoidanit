@@ -21,4 +21,14 @@ public class HelloController {
 	public String testTemplateEngine() {
 		return "hello.html";
 	}
+
+	@GetMapping("/admin")
+	public String showAdmin() {
+		return "/admin/showAdmin";
+	}
+
+	@GetMapping("/user")
+	public String showUser() {
+		return "/user/showUser";
+	}
 }
