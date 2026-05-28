@@ -19,11 +19,18 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import vn.hoidanit.springsieutoc.model.User;
+import vn.hoidanit.springsieutoc.service.UserService;
 import vn.hoidanit.springsieutoc.service.UserServiceWrong1;
 import vn.hoidanit.springsieutoc.service.UserServiceWrong2;
 
 @Controller // MVC
 public class HelloController {
+
+	private final UserService _userService;
+
+	public HelloController(UserService userService) {
+		this._userService = userService;
+	}
 
 	@GetMapping("/template-engine")
 	public String testTemplateEngine(Model model) {
@@ -51,8 +58,12 @@ public class HelloController {
 		// model.addAttribute("users", userServiceWrong1);
 
 		// cách làm sai 2 (static)
-		List<User> userServiceWrong2 = UserServiceWrong2.fetchUsers();
-		model.addAttribute("users", userServiceWrong2);
+		// List<User> userServiceWrong2 = UserServiceWrong2.fetchUsers();
+		// model.addAttribute("users", userServiceWrong2);
+
+		// cách làm Dependency Injection
+		List<User> userList = this._userService.fetchUsers();
+		model.addAttribute("users", userList);
 
 		return "/user/showUser";
 	}
