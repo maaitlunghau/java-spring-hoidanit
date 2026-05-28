@@ -17,6 +17,8 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import vn.hoidanit.springsieutoc.model.User;
 import vn.hoidanit.springsieutoc.service.UserService;
@@ -69,7 +71,18 @@ public class HelloController {
 	}
 
 	@GetMapping("/user/create")
-	public String getCreatePage() {
+	public String getCreatePage(Model model) {
+		model.addAttribute("user", new User());
 		return "/user/create";
+	}
+
+	@PostMapping("/user/create")
+	public String getPostPage(@ModelAttribute User createUser, Model model) {
+		createUser.setId(1);
+
+		List<User> userList = Arrays.asList(createUser);
+		model.addAttribute("users", userList);
+
+		return "/user/show";
 	}
 }
