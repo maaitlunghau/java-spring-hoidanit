@@ -97,3 +97,19 @@ d. Mustache
 
 e. Pebble
 - Template engine hiện đại kiểu giống Jinja2/Twig.
+
+
+3. Ioc (Inversion of Control) - Sự đảo ngược điều khiển
+- Là nguyên tắc thiết kế (Design Pattern) phần mềm, không phải là một công nghệ cụ thể.
+- Nó là nền tảng cốt lõi của Spring Framework
+
+BẢN CHẤT: Thay đổi cách thức kiểm soát luồng hoạt động và quản lý đối tượng trong ứng dụng.
+
+SO SÁNH:
+- Cách truyền thống (Không có Ioc): Lập trình viên (code) phải chịu trách nhiệm hoàn toàn trong việc:
++ Tự tạo ra các đối tượng (thông qua từ khoá new)
++ Tìm kiếm và kết nối các đối tuộng phụ thuộc 
++ Quản lý vòng đời (life cycle) của chúng
+- Sử dụng Ioc: Spring Framework chịu trách nhiệm kiểm soát việc khởi tạo, quản lý và kết nối các đối tượng. Chỉ cần khai báo các đối tượng cần thiết. 
+
+=> Với Ioc, quyền điều khiển (control) việc quản lý các đối tượng bị đảo ngược từ lập trình viên sang Framework.
