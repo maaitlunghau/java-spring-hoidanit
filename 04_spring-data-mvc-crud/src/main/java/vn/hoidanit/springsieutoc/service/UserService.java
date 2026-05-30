@@ -18,11 +18,7 @@ public class UserService {
     }
 
     public List<User> fetchUsers() {
-        List<User> userList = Arrays.asList(new User(1, "Dependency Injection",
-                "a.nguyen@example.com", "Hà Nội"),
-                new User(2, "Trần Thị B", "b.tran@example.com", "TP.HCM"),
-                new User(3, "Lê Văn C", "c.le@example.com", "Đà Nẵng"));
-
+        List<User> userList = this.userRepository.findAll();
         return userList;
     }
 
