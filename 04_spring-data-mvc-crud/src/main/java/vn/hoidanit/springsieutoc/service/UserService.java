@@ -2,7 +2,9 @@ package vn.hoidanit.springsieutoc.service;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
+import jakarta.persistence.Persistence;
 import org.springframework.stereotype.Service;
 
 import vn.hoidanit.springsieutoc.model.User;
@@ -22,7 +24,27 @@ public class UserService {
         return userList;
     }
 
+    public Optional<User> fetchUserById(int id) {
+        return this.userRepository.findById(id);
+    }
+
     public void createUser(User user) {
         this.userRepository.save(user);
+    }
+
+    public void updateUser(User user) {
+        if (this.userRepository.existsById(user.getId())) {
+            this.userRepository.save(user);
+        } else {
+            System.out.println("User with ID " + user.getId() + " not found!");
+        }
+    }
+
+    public void deleteUser(int id) {
+        if (this.userRepository.existsById(id)) {
+            this.userRepository.deleteById(id);
+        } else {
+            System.out.println("User with ID " + id + " does not exist. Cannot delete!");
+        }
     }
 }

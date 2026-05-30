@@ -11,8 +11,8 @@
 
 package vn.hoidanit.springsieutoc.controller;
 
-import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Controller;
@@ -77,43 +77,34 @@ public class UserController {
 	}
 
 	@PostMapping("/user/create")
-	public String getPostPage(@ModelAttribute User createUser, Model model) {
+	public String getPostPage(@ModelAttribute User createUser) {
 		this._userService.createUser(createUser);
 		return "redirect:/user";
 	}
 
 	@GetMapping("/user/{id}")
 	public String getUpdateUserPage(Model model, @PathVariable int id) {
-		List<User> userList = this._userService.fetchUsers();
+		Optional<User> userOptional = this._userService.fetchUserById(id);
 
-		User updateUser = userList.stream().filter(user -> user.getId() == id)
-				.findFirst().get();
+		if (userOptional.isPresent()) {
+			model.addAttribute("user", userOptional.get());
+			model.addAttribute("id", id);
 
-		System.out.println(updateUser);
-
-		model.addAttribute("user", updateUser);
-		model.addAttribute("id", id);
-
-		return "/user/update";
+			return "/user/update";
+		} else {
+			return "redirect:/user";
+		}
 	}
 
 	@PostMapping("/user/update")
-	public String postUpdatePage(@ModelAttribute User updateUser, Model model) {
-		updateUser.setId(1);
-
-		List<User> userList = Arrays.asList(updateUser);
-		model.addAttribute("users", userList);
-
-		return "/user/show";
+	public String postUpdatePage(@ModelAttribute User updateUser) {
+		this._userService.updateUser(updateUser);
+		return "redirect:/user";
 	}
 
 	@PostMapping("/user/delete/{id}")
-	public String postDeleteUser(Model model, @PathVariable int id) {
-		List<User> userList = this._userService.fetchUsers();
-		List<User> newUserList = userList.stream().filter(user -> user.getId() != id)
-				.collect(Collectors.toList());
-		model.addAttribute("users", newUserList);
-
-		return "/user/show"; // hoặc redirect:/user
+	public String postDeleteUser(@PathVariable int id) {
+		this._userService.deleteUser(id);
+		return "redirect:/user";
 	}
 }
