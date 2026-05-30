@@ -47,4 +47,18 @@ public class UserService {
             System.out.println("User with ID " + id + " does not exist. Cannot delete!");
         }
     }
+
+    public void testJPA() {
+        System.out.println("Call JPA");
+
+        Optional<User> userOpt = this.userRepository.findByName("maaitlunghau");
+        Optional<User> user2Opt = this.userRepository.findByNameAndEmail(
+                "maaitlunghau",
+                "chunhau.py@gmail.com"
+       );
+
+
+        System.out.println(userOpt.get());
+        System.out.println(user2Opt.get());
+    }
 }
