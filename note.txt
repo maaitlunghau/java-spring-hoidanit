@@ -126,3 +126,20 @@ PHÂN BIỆT:
 - Không phải tất cả các đối tượng đều là Bean hết:
 + Một đối tượng chỉ trở thành Bean thì nó được Container quản lý
 + Nếu bạn tự tạo đối tượng với keyword new trong code, thì đối tượng đó không phải là Spring Bean và sẽ không được thừa hưởng các tính năng của Spring (DI, AOP, ...)
+
+
+5. Spring Context (Application Context)
+- Nếu Bean là các đối tượng, thì Context chính là môi trường chứa và quản lý các đối tượng đó.
+
+ĐỊNH NGHĨA:
+- Spring Contenxt chính là giao diện chính để tương tác với IoC Container. Trong các ứng dụng Spring hiện đại (bao gồm cả Spring Boot) thì giao diện được sử dụng phổ biến nhất là ApplicationContext.
+
+CHỨC NĂNG:
+- ApplicationContext chịu trách nhiệm cho:
++ Tải (Load) các định nghĩa Bean (từ cấu hình)
++ Khởi tạo và quản lý toàn bộ Bean trong ứng dụng
++ Cung cấp cơ chế tìm kiếm và truy cập các Bean 
+
+MỐI QUAN HỆ:
+- Container (ApplicationContext) là nơi chứa tất cả các Bean và quản lý vòng đời của chúng. 
+Cần phải có một Context đang chạy để có thể sử dụng bất kì Bean nào.
