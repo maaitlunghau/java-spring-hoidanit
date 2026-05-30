@@ -24,8 +24,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import vn.hoidanit.springsieutoc.model.User;
 import vn.hoidanit.springsieutoc.service.UserService;
-import vn.hoidanit.springsieutoc.service.UserServiceWrong1;
-import vn.hoidanit.springsieutoc.service.UserServiceWrong2;
 
 @Controller // MVC
 public class HelloController {
