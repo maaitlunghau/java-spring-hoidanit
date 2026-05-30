@@ -26,11 +26,11 @@ import vn.hoidanit.springsieutoc.model.User;
 import vn.hoidanit.springsieutoc.service.UserService;
 
 @Controller // MVC
-public class HelloController {
+public class UserController {
 
 	private final UserService _userService;
 
-	public HelloController(UserService userService) {
+	public UserController(UserService userService) {
 		this._userService = userService;
 	}
 
