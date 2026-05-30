@@ -100,10 +100,12 @@ e. Pebble
 
 
 3. Ioc (Inversion of Control) - Sự đảo ngược điều khiển
+ĐỊNH NGHĨA:
 - Là nguyên tắc thiết kế (Design Pattern) phần mềm, không phải là một công nghệ cụ thể.
 - Nó là nền tảng cốt lõi của Spring Framework
 
-BẢN CHẤT: Thay đổi cách thức kiểm soát luồng hoạt động và quản lý đối tượng trong ứng dụng.
+BẢN CHẤT: 
+- Thay đổi cách thức kiểm soát luồng hoạt động và quản lý đối tượng trong ứng dụng.
 
 SO SÁNH:
 - Cách truyền thống (Không có Ioc): Lập trình viên (code) phải chịu trách nhiệm hoàn toàn trong việc:
@@ -113,3 +115,14 @@ SO SÁNH:
 - Sử dụng Ioc: Spring Framework chịu trách nhiệm kiểm soát việc khởi tạo, quản lý và kết nối các đối tượng. Chỉ cần khai báo các đối tượng cần thiết. 
 
 => Với Ioc, quyền điều khiển (control) việc quản lý các đối tượng bị đảo ngược từ lập trình viên sang Framework.
+
+
+4. Spring Bean (Bean)
+ĐỊNH NGHĨA:
+- Spring Bean là một đối tượng Java thông thường (Plain Old Java Object - POJO) được quản lý với Spring Ioc Container, được cung cấp khi cần thiết.
+- Hiểu ngắn gọn: Bean là những Object thuộc về Spring, không thuộc về bạn.
+
+PHÂN BIỆT:
+- Không phải tất cả các đối tượng đều là Bean hết:
++ Một đối tượng chỉ trở thành Bean thì nó được Container quản lý
++ Nếu bạn tự tạo đối tượng với keyword new trong code, thì đối tượng đó không phải là Spring Bean và sẽ không được thừa hưởng các tính năng của Spring (DI, AOP, ...)
