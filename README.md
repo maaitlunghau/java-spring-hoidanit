@@ -18,6 +18,16 @@ This repository documents a goal-oriented study path through the Spring ecosyste
 
 ---
 
+## Core Architecture
+
+Understanding the internal flow of Spring Boot is crucial for building scalable applications. The diagram below illustrates the core architecture and request lifecycle within the Spring ecosystem:
+
+![Spring Framework Core Architecture](./Spring_Framework_Core_Architecture.png)
+
+*Visual representation of Spring's internal components, including IoC Container, Bean Management, and Layered Architecture.*
+
+---
+
 ## Learning Objectives
 
 By the end of this repository, the goal is to be able to:
