@@ -9,6 +9,7 @@
 <body class="bg-gray-50 font-sans text-gray-900">
 
 <div class="flex h-screen overflow-hidden">
+    <!-- Sidebar -->
     <div class="w-64 bg-gray-900 text-white flex flex-col">
         <div class="h-16 flex items-center px-6 border-b border-gray-800">
             <span class="text-lg font-bold tracking-wider text-indigo-400">MST SOFTWARE</span>
@@ -20,9 +21,13 @@
             <a th:href="@{/products}" class="flex items-center px-4 py-2.5 text-sm font-medium bg-gray-800 text-white rounded-lg">
                 Products System
             </a>
+            <a th:href="@{/users}" class="flex items-center px-4 py-2.5 text-sm font-medium text-gray-400 hover:bg-gray-800 hover:text-white rounded-lg transition-colors">
+                Users System
+            </a>
         </nav>
     </div>
 
+    <!-- Main Content -->
     <div class="flex-1 flex flex-col overflow-y-auto">
         <header class="h-16 bg-white border-b border-gray-200 flex items-center px-8">
             <h1 class="text-xl font-semibold text-gray-800">Deployment Console</h1>
