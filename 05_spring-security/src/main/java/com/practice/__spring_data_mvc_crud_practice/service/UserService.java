@@ -5,6 +5,7 @@ import com.practice.__spring_data_mvc_crud_practice.repository.UserRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -12,9 +13,11 @@ import java.util.Optional;
 @Service
 public class UserService {
     private final UserRepository _userRepository;
+    private final PasswordEncoder _passwordEncoder;
 
-    public UserService(UserRepository userRepository) {
+    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this._userRepository = userRepository;
+        this._passwordEncoder = passwordEncoder;
     }
 
     public Page<User> fetchUsersWithSpec(String keyword, int page, int size) {
@@ -28,6 +31,9 @@ public class UserService {
     }
 
     public User createUser(User user) {
+        String hashedPassword = this._passwordEncoder.encode(user.getPassword());
+        user.setPassword(hashedPassword);
+
         return this._userRepository.save(user);
     }
 
