@@ -32,12 +32,8 @@
     </div>
 
     <div class="flex-1 flex flex-col overflow-y-auto">
-        <header class="h-16 bg-white border-b border-gray-200 flex items-center justify-between px-8">
-            <h1 class="text-xl font-semibold text-gray-800">Overview Dashboard</h1>
-            <div class="flex items-center space-x-4">
-                <span class="text-sm text-gray-500">Welcome, Administrator</span>
-            </div>
-        </header>
+        <header th:replace="~{layout/header :: header('Overview Dashboard')}"></header>
+
 
         <main class="p-8 max-w-7xl w-full mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
