@@ -20,7 +20,7 @@ public class User {
     private String password;
 
     @NotBlank(message = "Address is required")
-    private String Address;
+    private String address;
 
     @NotBlank(message = "Role is required")
     private String role;
@@ -32,7 +32,7 @@ public class User {
         this.name = name;
         this.email = email;
         this.password = password;
-        this.Address = address;
+        this.address = address;
         this.role = role;
     }
 
@@ -44,44 +44,44 @@ public class User {
         this.id = id;
     }
 
-    public @NotBlank(message = "Name is required") String getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(@NotBlank(message = "Name is required") String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public @NotBlank(message = "Email is required") String getEmail() {
+    public String getEmail() {
         return email;
     }
 
-    public void setEmail(@NotBlank(message = "Email is required") String email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    public @NotBlank(message = "Password is required") String getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(@NotBlank(message = "Password is required") String password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
-    public @NotBlank(message = "Address is required") String getAddress() {
-        return Address;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAddress(@NotBlank(message = "Address is required") String address) {
-        Address = address;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public @NotBlank(message = "role is required") String getrole() {
+    public String getRole() {
         return role;
     }
 
-    public void setrole(@NotBlank(message = "role is required") String role) {
-        role = role;
+    public void setRole(String role) {
+        this.role = role;
     }
 
     @Override
@@ -91,7 +91,7 @@ public class User {
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", Address='" + Address + '\'' +
+                ", address='" + address + '\'' +
                 ", role='" + role + '\'' +
                 '}';
     }
