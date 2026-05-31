@@ -26,10 +26,10 @@ public class HomeController {
         return "auth/home";
     }
 
-    @GetMapping("/login1")
-    public String login() {
+     @GetMapping("/login")
+     public String login() {
         return "auth/login";
-    }
+     }
 
     @GetMapping("/register")
     public String register(Model model) {
