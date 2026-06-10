@@ -3,6 +3,7 @@ package com.practice.__spring_security_practice.services;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.practice.__spring_security_practice.models.User;
@@ -12,9 +13,11 @@ import com.practice.__spring_security_practice.repositories.UserRepository;
 public class UserService {
 
     private final UserRepository _userRepository;
+    private final PasswordEncoder _passwordEncoder;
 
-    public UserService(UserRepository userRepository) {
+    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this._userRepository = userRepository;
+        this._passwordEncoder = passwordEncoder;
     }
 
     public List<User> getAllUsers() {
@@ -28,6 +31,9 @@ public class UserService {
     public void createUser(User user) {
         if (user == null)
             return;
+
+        String hashedPassword = this._passwordEncoder.encode(user.getPassword());
+        user.setPassword(hashedPassword);
 
         this._userRepository.save(user);
     }

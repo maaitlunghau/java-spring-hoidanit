@@ -16,8 +16,6 @@ import com.practice.__spring_security_practice.models.OnUpdate;
 import com.practice.__spring_security_practice.models.User;
 import com.practice.__spring_security_practice.services.UserService;
 
-import jakarta.validation.Valid;
-
 // 1. phân biệt sự khác nhau giữa: return "users/index" và return "redirect:/users"
 // - return "users/index
 // + 
