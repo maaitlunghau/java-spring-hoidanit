@@ -51,4 +51,8 @@ public class UserService {
 
         this._userRepository.deleteById(id);
     }
+
+    public Optional<User> getUserByEmail(String email) {
+        return this._userRepository.findByEmail(email);
+    }
 }

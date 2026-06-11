@@ -2,6 +2,7 @@ package com.practice.__spring_security_practice.controllers;
 
 import java.util.List;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -34,9 +35,11 @@ import com.practice.__spring_security_practice.services.UserService;
 public class UserController {
 
     private final UserService _userService;
+    private final PasswordEncoder _passwordEncoder;
 
-    public UserController(UserService userService) {
+    public UserController(UserService userService, PasswordEncoder passwordEncoder) {
         this._userService = userService;
+        this._passwordEncoder = passwordEncoder;
     }
 
     // view
@@ -67,6 +70,9 @@ public class UserController {
     public String createUser(@Validated(OnCreate.class) @ModelAttribute User createUser, BindingResult bindingResult) {
         if (bindingResult.hasErrors())
             return "user/create";
+
+        String encodedPassword = this._passwordEncoder.encode(createUser.getPassword());
+        createUser.setPassword(encodedPassword);
 
         this._userService.createUser(createUser);
         return "redirect:/users";
