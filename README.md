@@ -268,7 +268,7 @@ Each phase contains isolated, runnable Spring Boot modules focused on a single c
 
 ## Author
 
-**Mai Trung Hậu** — Co-Founder at [MST Software](https://github.com/MSTSoftware) · Full-stack Web Developer  
+**Mai Trung Hậu** — Co-Founder at [MST Software](https://github.com/mst-software-vn) · Full-stack Web Developer  
 *Specializing in TypeScript / React / Next.js / .NET · Expanding into Java / Spring Boot backend*
 
 ---
