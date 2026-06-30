@@ -1,4 +1,4 @@
-# java-spring-mastery
+# java-spring-hoidanit
 
 > A structured study repository for building production-grade web backends with the Spring ecosystem — from core fundamentals to two complete full-stack projects covering both Stateful and Stateless architectural models.
 
